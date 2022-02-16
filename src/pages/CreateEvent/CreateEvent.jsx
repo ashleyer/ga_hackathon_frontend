@@ -5,7 +5,7 @@ import { addEvent } from '../../services/eventService';
 
 const CreateEvent = () => {
   const navigate = useNavigate()
-  const [event, setEvent] = useState()
+  // const [event, setEvent] = useState()
   const [formData, setFormData] = useState({
     eventName: '',
     description: '',
@@ -32,8 +32,6 @@ const CreateEvent = () => {
   return (
     <>
       <EventForm 
-        event={event}
-        setEvent={setEvent}
         handleCreateEvent={handleCreateEvent}
         handleChange={handleChange}
         validForm={validForm}

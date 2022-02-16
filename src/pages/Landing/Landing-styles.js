@@ -24,7 +24,7 @@ export const Wrapper = styled.div`
     position: absolute;
     transform: translate(-50%,-50%);
     margin-right: -50%;
-    top: 45%;
+    top: 60%;
     left: 50%;
     border: none;
     font-size: 17px;

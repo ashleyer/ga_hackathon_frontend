@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom'
+import { Wrapper } from './NavBar-styles'
+import logo from '../../pages/images/Logo.png';
 
 const NavBar = ({ user, handleLogout, handleShowSignup, handleShowLogin }) => {
   return (
-    <>
+    <Wrapper>
+       <img src={logo} alt='logo'/>
       {user ?
         <nav>
           <ul>
@@ -15,12 +18,12 @@ const NavBar = ({ user, handleLogout, handleShowSignup, handleShowLogin }) => {
       :
         <nav>
           <ul>
-          <li><button onClick={handleShowLogin}>Log In</button></li>
-            <li><button onClick={handleShowSignup}>Sign Up</button></li>
+          <li><button className='login-btn' onClick={handleShowLogin}>Login</button></li>
+            <li><button className='signup-btn' onClick={handleShowSignup}>Sign Up</button></li>
           </ul>
         </nav>
       }
-    </>
+    </Wrapper>
   )
 }
 

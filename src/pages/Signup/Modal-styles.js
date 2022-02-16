@@ -13,9 +13,10 @@ export const Background = styled.div`
 export const Wrapper = styled.div`
     position: fixed;
     top: 30vh;
-    left: 25%;
-    width: 50%;
-    background-color: #27474e;
+    left: 35%;
+    width: 30%;
+    height: 50vh;
+    background-color: #FDF5FB;
     padding: 15px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     z-index: 30;

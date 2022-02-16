@@ -14,7 +14,7 @@ const Signup = props => {
   return (
     <Modal onClose={props.onClose}>
       <Wrapper>
-      <h1>Sign Up</h1>
+      <h3>Create Account</h3>
       <p>{message}</p>
       <SignupForm {...props} updateMessage={updateMessage} />
       </Wrapper>

@@ -44,9 +44,11 @@ const SignupForm = props => {
       autoComplete="off"
       onSubmit={handleSubmit}
     >
-      <div>
+      <div className='input-icons'>
         <label htmlFor="name"></label>
+        <i class="fa fa-user"></i>
         <input
+        className="input-field"
         placeholder='Name'
           type="text"
           autoComplete="off"
@@ -58,6 +60,7 @@ const SignupForm = props => {
       </div>
       <div>
         <label htmlFor="email"></label>
+        <i class="fa fa-at"></i>
         <input
         placeholder='Email'
           type="text"
@@ -70,6 +73,7 @@ const SignupForm = props => {
       </div>
       <div>
         <label htmlFor="password"></label>
+        <i class="fa fa-key"></i>
         <input
         placeholder='Password'
           type="password"
@@ -83,6 +87,7 @@ const SignupForm = props => {
       <div>
         <label htmlFor="confirm">
         </label>
+        <i class="fa fa-key"></i>
         <input
         placeholder='Confirm Password'
           type="password"
@@ -94,12 +99,8 @@ const SignupForm = props => {
         />
       </div>
       <div>
-        <button disabled={isFormInvalid()}>
-          Sign Up
-        </button>
-        <Link to="/">
-          <button>Cancel</button>
-        </Link>
+        <input className="button" type="submit" value="Sign Up" disabled={isFormInvalid()}
+        />
       </div>
     </form>
     </Wrapper>

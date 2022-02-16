@@ -29,23 +29,36 @@ const App = () => {
   const handleHideSignup = () => {
     setSignupVisible(false)
   };
+
+  const [loginVisible, setLoginVisible] = useState(false);
+
+  const handleShowLogin = () => {
+    setLoginVisible(true)
+  };
+
+  const handleHideLogin = () => {
+    setLoginVisible(false)
+  };
   
-  console.log(signupVisible)
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} 
       handleShowSignup={handleShowSignup}
+      handleShowLogin={handleShowLogin}
       />
        {signupVisible && <Signup handleSignupOrLogin={handleSignupOrLogin} 
        onClose={handleHideSignup}
         />}
-      <Routes>
+
+      {loginVisible && <Login handleSignupOrLogin={handleSignupOrLogin} 
+      onClose={handleHideLogin}/>}
+          
+       <Routes>  
+        
+      
         <Route path="/" element={<Landing user={user} />} />
 
-        <Route
-          path="/login"
-          element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
-        />
+       
       </Routes>
     </>
   )

@@ -65,3 +65,14 @@ export const updateEvent = async (eventId, formData) => {
     throw error
   }
 }
+
+export const deleteEvent = async (eventId) => {
+  try {
+    await fetch(`${BASE_URL}${eventId}`, {
+      method: 'DELETE',
+      headers: { 'Authorization': `Bearer ` + tokenService.getToken()}
+    })
+  } catch (error) {
+    throw error
+  }
+}

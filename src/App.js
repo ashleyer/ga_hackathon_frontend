@@ -5,6 +5,7 @@ import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import * as authService from './services/authService'
+import Footer from './components/Footer/Footer'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -60,6 +61,7 @@ const App = () => {
 
        
       </Routes>
+      <Footer/>
     </>
   )
 }

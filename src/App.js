@@ -5,6 +5,7 @@ import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import * as authService from './services/authService'
+import Dashboard from './pages/Dashboard/Dashboard'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -33,6 +34,7 @@ const App = () => {
           path="/login"
           element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
         />
+        <Route path='/dashboard' element={<Dashboard/>}/>
       </Routes>
     </>
   )

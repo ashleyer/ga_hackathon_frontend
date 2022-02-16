@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   display: flex;
+  font-size: 17px;
   
   input {
     margin: 10px 0px;

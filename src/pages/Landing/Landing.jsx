@@ -1,17 +1,23 @@
-import styles from './Landing.css'
+import { Wrapper } from './Landing-styles.js'
+import hero_photo from '../images/Hero_Photo.png';
+
+
+
+
 
 const Landing = ({ user }) => {
   return (
-    <main className={styles.container}>
+    <Wrapper>
+    <main>
       <h1>
-        Split payment tracking made easy
+        Keep track of split costs with ease
       </h1>
-      <h2>Split the cost of an event with friends</h2>
-      <img src='http://rockcontent.com/wp-content/uploads/2021/02/interactive-calculator.png' alt='calculator'/>
+      <img src={hero_photo} alt='calculator'/>
       
       <button>Start</button>
       
     </main>
+    </Wrapper>
   )
 }
 

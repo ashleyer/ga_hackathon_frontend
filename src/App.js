@@ -8,6 +8,7 @@ import * as authService from './services/authService'
 import Dashboard from './pages/Dashboard/Dashboard'
 import CreateEvent from './pages/CreateEvent/CreateEvent'
 import EventDetails from './pages/EventDetails/EventDetails'
+import { useSelector } from 'react-redux'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())

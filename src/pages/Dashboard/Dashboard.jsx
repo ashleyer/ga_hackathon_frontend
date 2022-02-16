@@ -6,12 +6,13 @@ import { Link } from 'react-router-dom';
 import EventCard from '../../components/EventCard/EventCard';
 
 const Dashboard = () => {
-	const events = useSelector(state => state.allEvents.events);
+	const events = useSelector(state => state.allEvents.events.events);
 	const dispatch = useDispatch();
-
+	console.log('events', events);
+	
 	useEffect(() => {
 		dispatch(fetchEvents());
-	});
+	}, []);
 
 	const handleDeleteEvent = async eventId => {
 		try {

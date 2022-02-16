@@ -20,15 +20,28 @@ const App = () => {
     setUser(authService.getUser())
   }
 
+  const [signupVisible, setSignupVisible] = useState(false);
+
+  const handleShowSignup = () => {
+    setSignupVisible(true)
+  };
+
+  const handleHideSignup = () => {
+    setSignupVisible(false)
+  };
+  
+  console.log(signupVisible)
   return (
     <>
-      <NavBar user={user} handleLogout={handleLogout} />
+      <NavBar user={user} handleLogout={handleLogout} 
+      handleShowSignup={handleShowSignup}
+      />
+       {signupVisible && <Signup handleSignupOrLogin={handleSignupOrLogin} 
+       onClose={handleHideSignup}
+        />}
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
-        <Route
-          path="/signup"
-          element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
-        />
+
         <Route
           path="/login"
           element={<Login handleSignupOrLogin={handleSignupOrLogin} />}

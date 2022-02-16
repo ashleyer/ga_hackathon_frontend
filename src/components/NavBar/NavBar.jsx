@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-const NavBar = ({ user, handleLogout }) => {
+const NavBar = ({ user, handleLogout, handleShowSignup }) => {
   return (
     <>
       {user ?
@@ -16,7 +16,7 @@ const NavBar = ({ user, handleLogout }) => {
         <nav>
           <ul>
             <li><Link to="/login">Log In</Link></li>
-            <li><Link to="/signup">Sign Up</Link></li>
+            <li><button onClick={handleShowSignup}>Sign Up</button></li>
           </ul>
         </nav>
       }

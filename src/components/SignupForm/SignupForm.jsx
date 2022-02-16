@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import styles from './SignupForm.css'
+import { Wrapper } from './SignupForm-styles.js'
 import * as authService from '../../services/authService'
+
 
 const SignupForm = props => {
   const navigate = useNavigate()
@@ -38,14 +39,17 @@ const SignupForm = props => {
   }
 
   return (
+    <Wrapper>
     <form
       autoComplete="off"
       onSubmit={handleSubmit}
-      className={styles.container}
     >
-      <div className={styles.inputContainer}>
-        <label htmlFor="name" className={styles.label}>Name</label>
+      <div className='input-icons'>
+        <label htmlFor="name"></label>
+        <i class="fa fa-user"></i>
         <input
+        className="input-field"
+        placeholder='Name'
           type="text"
           autoComplete="off"
           id="name"
@@ -54,9 +58,11 @@ const SignupForm = props => {
           onChange={handleChange}
         />
       </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="email" className={styles.label}>Email</label>
+      <div>
+        <label htmlFor="email"></label>
+        <i class="fa fa-at"></i>
         <input
+        placeholder='Email'
           type="text"
           autoComplete="off"
           id="email"
@@ -65,9 +71,11 @@ const SignupForm = props => {
           onChange={handleChange}
         />
       </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="password" className={styles.label}>Password</label>
+      <div>
+        <label htmlFor="password"></label>
+        <i class="fa fa-key"></i>
         <input
+        placeholder='Password'
           type="password"
           autoComplete="off"
           id="password"
@@ -76,11 +84,12 @@ const SignupForm = props => {
           onChange={handleChange}
         />
       </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="confirm" className={styles.label}>
-          Confirm Password
+      <div>
+        <label htmlFor="confirm">
         </label>
+        <i class="fa fa-key"></i>
         <input
+        placeholder='Confirm Password'
           type="password"
           autoComplete="off"
           id="confirm"
@@ -89,15 +98,12 @@ const SignupForm = props => {
           onChange={handleChange}
         />
       </div>
-      <div className={styles.inputContainer}>
-        <button disabled={isFormInvalid()} className={styles.button}>
-          Sign Up
-        </button>
-        <Link to="/">
-          <button>Cancel</button>
-        </Link>
+      <div>
+        <input className="button" type="submit" value="Sign Up" disabled={isFormInvalid()}
+        />
       </div>
     </form>
+    </Wrapper>
   )
 }
 

@@ -1,10 +1,23 @@
-import styles from './Landing.css'
+import { Wrapper } from './Landing-styles.js'
+import hero_photo from '../images/Hero_Photo.png';
+
+
+
+
 
 const Landing = ({ user }) => {
   return (
-    <main className={styles.container}>
-      <h1>hello, {user ? user.name : 'friend'}</h1>
+    <Wrapper>
+    <main>
+      <h1>
+        Keep track of split costs with ease
+      </h1>
+      <img src={hero_photo} alt='calculator'/>
+      
+      <button>Start</button>
+      
     </main>
+    </Wrapper>
   )
 }
 

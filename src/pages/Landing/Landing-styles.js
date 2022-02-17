@@ -21,11 +21,9 @@ export const Wrapper = styled.div`
     background: var(--darkPink);
     padding: 10px 40px;
     border-radius: 20px;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    margin-right: -50%;
-    top: 60%;
-    left: 50%;
+    position: fixed;
+    top: 55%;
+    left: 46%;
     border: none;
     font-size: 17px;
     cursor: pointer;

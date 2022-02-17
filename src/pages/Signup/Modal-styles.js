@@ -12,10 +12,10 @@ export const Background = styled.div`
 
 export const Wrapper = styled.div`
     position: fixed;
-    top: 30vh;
+    top: 25vh;
     left: 25%;
     width: 50%;
-    height: 45vh;
+    height: 60%;
     background-color: #FDF5FB;
     padding: 15px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);

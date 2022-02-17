@@ -2,9 +2,10 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
     background-color: var(--darkGrey);
-    display: flex;
-    gap: 300px;
     color: var(--lightPink);
+    display: flex;
+    justify-content: space-between;
+    
     
     img {
         height: 50px;
@@ -14,9 +15,9 @@ export const Wrapper = styled.div`
     .text {
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: space-evenly;
-        margin: 10px;
+        align-items: center;
+        margin: 5px;
     }
 
     .social-media {
@@ -34,8 +35,5 @@ export const Wrapper = styled.div`
         color: inherit;
     }
 
-    @media screen and (max-width: 950px) {
-            gap: 0px;
-            justify-content: space-evenly;
-    }
+   
 `;

@@ -5,6 +5,7 @@ import moment from 'moment';
 import * as eventService from '../../services/eventService';
 import AttendeeSection from '../../components/AttendeeList/AttendeeSection';
 import BudgetSection from '../../components/BudgetItems/BudgetSection'
+import {Wrapper} from './EventDetails-styles'
 
 const EventDetails = () => {
 	const { id } = useParams();
@@ -47,7 +48,7 @@ const EventDetails = () => {
 				budget={budget}
 				setBudget={setBudget}
 			/>
-		</>
+		</Wrapper>
 	);
 };
 

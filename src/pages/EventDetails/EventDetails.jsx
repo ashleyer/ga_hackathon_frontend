@@ -17,7 +17,6 @@ const EventDetails = () => {
 			try {
 				const eventData = await eventService.getEventById(id);
 				setEvent(eventData.event);
-				console.log(eventData.event.attendeeList);
 				setAttendees(eventData.event.attendeeList);
 				setBudget(eventData.event.budgetItems)
 			} catch (error) {

@@ -44,14 +44,21 @@ const AttendeeSection = ({ event }) => {
 	return (
 		<>
 			<h1>Attendees</h1>
-			<AttendeeList />
-			<AddAttendee
-				event={event}
+			<button onClick={() => setToggleNew(!toggleNew)}>Add New Attendee</button>
+			<AttendeeList
 				attendees={attendees}
-        setAttendees={setAttendees}
-        handleCreateAttendee={handleCreateAttendee}
-        setToggleNew={setToggleNew}
+        handleDeleteAttendee={handleDeleteAttendee}
+        handleSetStatus={handleSetStatus}
 			/>
+			{toggleNew && (
+				<AddAttendee
+					event={event}
+					attendees={attendees}
+					setAttendees={setAttendees}
+					handleCreateAttendee={handleCreateAttendee}
+					setToggleNew={setToggleNew}
+				/>
+			)}
 		</>
 	);
 };

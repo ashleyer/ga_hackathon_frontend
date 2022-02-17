@@ -1,11 +1,17 @@
 import React from 'react';
-import * as eventService from '../../services/eventService'
+import AttendeeCard from './AttendeeCard'
 
-const AttendeeList = () => {
-  
-  
+const AttendeeList = (props) => {
   return (
-    <h1>Attendee List</h1>
+    <>
+      {props.attendees?.map((attendee) => (
+        <AttendeeCard
+          {...props}
+          attendee={attendee}
+          key={attendee._id}
+        />
+      ))}
+    </>
   )
 }
 

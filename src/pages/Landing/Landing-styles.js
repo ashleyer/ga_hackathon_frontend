@@ -29,4 +29,10 @@ export const Wrapper = styled.div`
     border: none;
     font-size: 17px;
   }
+
+  @media screen and (max-width: 500px) {
+    img {
+      width 100%;
+    }
+  }
 `;

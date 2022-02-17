@@ -18,6 +18,7 @@ const Footer = () => {
                 <p>2022 Splitski</p>
             </div>
             </div>
+            <div></div>
         </Wrapper>
     )
 }

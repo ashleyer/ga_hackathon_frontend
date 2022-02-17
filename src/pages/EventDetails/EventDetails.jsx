@@ -4,6 +4,7 @@ import moment from 'moment';
 import * as eventService from '../../services/eventService';
 import AttendeeSection from '../../components/AttendeeList/AttendeeSection';
 import BudgetSection from '../../components/BudgetItems/BudgetSection'
+import {Wrapper} from './EventDetails-styles'
 
 const EventDetails = () => {
 	const { id } = useParams();
@@ -36,21 +37,42 @@ const EventDetails = () => {
 	}, [id]);
 
 	return (
-		<>
-			<h1>Event Details</h1>
-			<h1>{event.eventName}</h1>
+		<Wrapper>
+			<div className='event-box'>
+			<div className='top-info'>
+			<h1> {event.eventName}</h1>
+			<div className='info-box'>
+			<h3>Description:</h3>
+			<div className='info'>
 			<h3>{event.description}</h3>
+			</div>
+			</div>
+			<div className='info-box'>
+			<h3>Date: </h3>
+			<div className='info'>
 			<h3>{moment(event.startDate).utc().format('MM/DD/YYYY')}</h3>
 			{event.endDate && (
 				<h3>{moment(event.endDate).utc().format('MM/DD/YYYY')}</h3>
+				
 			)}
+			</div>
+			</div>
+			<div className='info-box'>
+			<h3>Location:</h3>
+			<div className='info'>
 			<h3>{event.location}</h3>
+
+			</div>
+			</div>
+			</div>
+
 			<button onClick={() => navigate(`/events/${event._id}/edit`)}>
         Update
       </button>
       <button onClick={() => handleDeleteEvent(event._id)}>
         Delete
       </button>
+
 			<AttendeeSection
 				event={event}
 				attendees={attendees}
@@ -62,7 +84,8 @@ const EventDetails = () => {
 				budget={budget}
 				setBudget={setBudget}
 			/>
-		</>
+			</div>
+		</Wrapper>
 	);
 };
 

@@ -9,7 +9,7 @@ const NavBar = ({ user, handleLogout, handleShowSignup, handleShowLogin }) => {
        <img src={logo} alt='logo'/>
       {user ?
         <nav>
-          <ul>
+          <ul className='logged-in'>
             <li>Welcome, {user.name}</li>
             <li><Link to='/dashboard'>Event Dashboard</Link></li>
             <li><Link to="" onClick={handleLogout}>LOG OUT</Link></li>

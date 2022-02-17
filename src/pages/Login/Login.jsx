@@ -20,6 +20,7 @@ const LoginPage = props => {
       <LoginForm
         handleSignupOrLogin={props.handleSignupOrLogin}
         updateMessage={updateMessage}
+        onClose={props.onClose}
       />
     </main>
     </Wrapper>

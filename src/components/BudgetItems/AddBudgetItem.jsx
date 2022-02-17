@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Wrapper } from './AddBudgetItem-styles';
 
 const AddBudgetItem = props => {
 	const [formData, setFormData] = useState({
@@ -17,7 +18,9 @@ const AddBudgetItem = props => {
 	};
 
 	return (
+		
 		<form onSubmit={handleSubmit}>
+			<Wrapper>
 			<label>Item: </label>
 			<input
 				type="text"
@@ -34,7 +37,9 @@ const AddBudgetItem = props => {
 				onChange={handleChange}
       />
       <button type="submit">Add Budget Item</button>
+	  </Wrapper>
 		</form>
+		
 	);
 };
 

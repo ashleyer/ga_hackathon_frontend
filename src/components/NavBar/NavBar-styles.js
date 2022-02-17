@@ -25,6 +25,7 @@ export const Wrapper = styled.div`
         border-radius: 12px;
         border: none;
         font-size: 15px;
+        cursor: pointer;
     }
 
     .login-btn {
@@ -32,5 +33,25 @@ export const Wrapper = styled.div`
         background-color: var(--darkGrey);
         color: var(--lightPink);
         font-size: 15px;
+        cursor: pointer;
     }
+
+    .logged-in {
+        color: var(--lightPink);
+        font-size: 20px;
+    }
+
+    a {
+        color: var(--lightPink);
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    a:hover {
+        color: var(--darkPink);
+    }
+
+
+    
 `;
+

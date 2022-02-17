@@ -12,22 +12,21 @@ export const Wrapper = styled.div`
   
 
   img {
-    height: 40vh;
-    postition: relative;
-    display: inline-block;
+    height: 350px;
+    position: relative;
   }
 
   button {
     background: var(--darkPink);
     padding: 10px 40px;
     border-radius: 20px;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    margin-right: -50%;
-    top: 60%;
-    left: 50%;
     border: none;
     font-size: 17px;
+    cursor: pointer;
+    position: absolute;
+    left: 45%;
+    top: 55%;
+    
   }
 
   @media screen and (max-width: 500px) {

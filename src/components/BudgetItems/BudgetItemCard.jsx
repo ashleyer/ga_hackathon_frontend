@@ -1,13 +1,14 @@
 import React from 'react';
 import BudgetActions from './BudgetActions'
+import {Wrapper} from './BudgetItemCard-styles'
 
 const BudgetItemCard = props => {
   return (
-    <div>
+    <Wrapper>
       <p>{props.item.itemName}</p>
       <p>${props.item.itemPrice}</p>
       <BudgetActions {...props}/>
-    </div>
+    </Wrapper>
   )
 }
 

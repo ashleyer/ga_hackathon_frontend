@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Routes, Route, useNavigate, Navigate } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import Footer from '../src/components/Footer/Footer';
 import NavBar from './components/NavBar/NavBar';
 import Signup from './pages/Signup/Signup';
@@ -9,7 +9,7 @@ import * as authService from './services/authService';
 import Dashboard from './pages/Dashboard/Dashboard';
 import CreateEvent from './pages/CreateEvent/CreateEvent';
 import EventDetails from './pages/EventDetails/EventDetails';
-import { useSelector } from 'react-redux';
+import UpdateEvent from './pages/UpdateEvent/UpdateEvent';
 
 const App = () => {
 	const [user, setUser] = useState(authService.getUser());
@@ -79,7 +79,8 @@ const App = () => {
 				/>
 				<Route path="/dashboard" element={<Dashboard />} />
 				<Route path="/newEvent" element={<CreateEvent />} />
-				<Route path="/events/:id" element={<EventDetails />} />
+        <Route exact path="/events/:id/edit" element={<UpdateEvent />}/>
+        <Route exact path="/events/:id" element={<EventDetails />} />
 			</Routes>
 			<Footer />
 		</>

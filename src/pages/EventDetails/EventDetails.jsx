@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router';
-// import { Link } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router';
 import moment from 'moment';
 import * as eventService from '../../services/eventService';
 import AttendeeSection from '../../components/AttendeeList/AttendeeSection';
@@ -11,6 +10,15 @@ const EventDetails = () => {
 	const [event, setEvent] = useState({});
 	const [attendees, setAttendees] = useState([]);
 	const [budget, setBudget] = useState([])
+	const navigate = useNavigate()
+
+	const handleDeleteEvent = async eventId => {
+		try {
+			await eventService.deleteEvent(eventId);
+		} catch (error) {
+			throw error;
+		}
+	};
 
 	useEffect(() => {
 		const fetchEvent = async () => {
@@ -36,6 +44,12 @@ const EventDetails = () => {
 				<h3>{moment(event.endDate).utc().format('MM/DD/YYYY')}</h3>
 			)}
 			<h3>{event.location}</h3>
+			<button onClick={() => navigate(`/events/${event._id}/edit`)}>
+        Update
+      </button>
+      <button onClick={() => handleDeleteEvent(event._id)}>
+        Delete
+      </button>
 			<AttendeeSection
 				event={event}
 				attendees={attendees}

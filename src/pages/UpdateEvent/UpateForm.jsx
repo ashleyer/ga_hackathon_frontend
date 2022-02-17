@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from 'react';
-import './eventForm.css';
+import React, { useRef, useEffect } from 'react';
+import moment from 'moment';
 
-const EventForm = ({
-	handleCreateEvent,
+const UpdateForm = ({
 	handleChange,
+	handleUpdateEvent,
 	validForm,
 	setValidForm,
 	formData,
@@ -17,34 +17,46 @@ const EventForm = ({
 	}, [formData]);
 
 	return (
-		<div className="event-form">
-			<form onSubmit={e => handleCreateEvent(e)} ref={formElement}>
-				<label>Event Name: </label>
+		<div>
+			<h1>Update Event</h1>
+			<form onSubmit={e => handleUpdateEvent(e)} ref={formElement}>
+				<label>Event Name: </label> <br />
 				<input
 					required
 					type="text"
 					name="eventName"
 					autoComplete="off"
-					placeholder="Event Name"
+					value={formData?.eventName}
 					onChange={handleChange}
-				/>
+				/>{' '}
 				<br />
-				<label>Description : </label>
+				<label>Description: </label>
 				<textarea
 					type="text"
 					name="description"
 					autoComplete="off"
 					rows="4"
 					cols="35"
-					placeholder="Description"
+					value={formData?.description}
 					onChange={handleChange}
-				/>
+				/>{' '}
 				<br />
 				<label>Start Date: </label>
-				<input required type="date" name="startDate" onChange={handleChange} />
+				<input
+					required
+					type="date"
+					name="startDate"
+					value={moment(formData?.startDate).format('YYYY-MM-DD')}
+					onChange={handleChange}
+				/>{' '}
 				<br />
 				<label>End Date (optional): </label>
-				<input type="date" name="endDate" onChange={handleChange} />
+				<input
+					type="date"
+					name="endDate"
+					value={moment(formData?.endDate).format('YYYY-MM-DD')}
+					onChange={handleChange}
+				/>{' '}
 				<br />
 				<label>Location: </label>
 				<input
@@ -52,16 +64,16 @@ const EventForm = ({
 					type="text"
 					name="location"
 					autoComplete="off"
-					placeholder="Location"
+					value={formData?.location}
 					onChange={handleChange}
-				/>
+				/>{' '}
 				<br />
 				<button type="submit" disabled={!validForm}>
-					Create Event
+					Update Event
 				</button>
 			</form>
 		</div>
 	);
 };
 
-export default EventForm;
+export default UpdateForm;

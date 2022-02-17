@@ -60,6 +60,7 @@ export const updateEvent = async (eventId, formData) => {
 			body: JSON.stringify(formData),
 		});
 		const data = await res.json();
+		// console.log(data.updatedEvent);
 		return data;
 	} catch (error) {
 		throw error;

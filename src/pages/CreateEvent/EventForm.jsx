@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import './eventForm.css';
+import { Wrapper } from './EventForm-styles';
+
 
 const EventForm = ({
 	handleCreateEvent,
@@ -17,7 +18,7 @@ const EventForm = ({
 	}, [formData]);
 
 	return (
-		<div>
+		<Wrapper>
 			<div className="event-form">
 				<form onSubmit={e => handleCreateEvent(e)} ref={formElement}>
 					<label>Event Name: </label>
@@ -67,7 +68,7 @@ const EventForm = ({
 					</button>
 				</form>
 			</div>
-		</div>
+		</Wrapper>
 	);
 };
 

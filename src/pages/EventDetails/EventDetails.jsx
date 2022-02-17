@@ -5,6 +5,7 @@ import moment from 'moment';
 import * as eventService from '../../services/eventService';
 import { fetchSingleEvent, fetchEvents } from '../../redux/actions/eventActions';
 import { useSelector, useDispatch } from 'react-redux';
+import { Wrapper } from './EventDetails-styles';
 
 const EventDetails = () => {
 	const { id } = useParams();
@@ -26,7 +27,7 @@ const EventDetails = () => {
   console.log('event', event)
 
 	return (
-		<>
+		<Wrapper>
 			<h1>Event Details</h1>
 			{/* <h1>{event.event.eventName}</h1>
 			<h3>{event.event.description}</h3>
@@ -35,7 +36,7 @@ const EventDetails = () => {
 				<h3>{moment(event.event.endDate).utc().format('MM/DD/YYYY')}</h3>
 			)}
 			<h3>{event.event.location}</h3> */}
-		</>
+		</Wrapper>
 	);
 };
 

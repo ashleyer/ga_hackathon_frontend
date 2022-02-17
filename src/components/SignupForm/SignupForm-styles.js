@@ -13,6 +13,7 @@ export const Wrapper = styled.div`
     background-color: var(--darkPink);
     padding: 5px 50px;
     border-radius: 10px;
+    cursor: pointer;
   }
 
   i {

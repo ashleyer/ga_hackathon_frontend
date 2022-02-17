@@ -1,7 +1,8 @@
 import React from 'react'
-import styles from './Landing.css'
+import { Wrapper } from './Landing-styles'
+import hero_photo from '../images/Hero_Photo.png'
 
-const Landing = ({ user }) => {
+const Landing = ({ user, handleShowSignup }) => {
   return (
     <Wrapper>
     <main>
@@ -10,7 +11,7 @@ const Landing = ({ user }) => {
       </h1>
       <img src={hero_photo} alt='calculator'/>
       
-      <button>Start</button>
+      <button onClick={handleShowSignup}>Start</button>
       
     </main>
     </Wrapper>

@@ -9,6 +9,7 @@ import Dashboard from './pages/Dashboard/Dashboard'
 import CreateEvent from './pages/CreateEvent/CreateEvent'
 import EventDetails from './pages/EventDetails/EventDetails'
 import { useSelector } from 'react-redux'
+import Footer from '../src/components/Footer/Footer'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -60,23 +61,9 @@ const App = () => {
       <Routes>
 
 
-        <Route path="/" element={<Landing user={user} />} />
-<<<<<<< HEAD
+        <Route path="/" element={<Landing user={user} handleShowSignup={handleShowSignup}/>} />
 
 
-=======
-        <Route
-          path="/signup"
-          element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
-        />
-        <Route
-          path="/login"
-          element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
-        />
-        <Route path='/dashboard' element={<Dashboard />} />
-        <Route path='/newEvent' element={<CreateEvent />} />
-        <Route path='/events/:id' element={<EventDetails />}/>
->>>>>>> 7c2188d6a23415d10edf9c90021dd11d7ad3b42f
       </Routes>
       <Footer />
     </>

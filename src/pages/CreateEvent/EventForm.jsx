@@ -21,28 +21,28 @@ const EventForm = ({
 		<Wrapper>
 			<div className="event-form">
 				<form onSubmit={e => handleCreateEvent(e)} ref={formElement}>
-					<label>Event Name: </label>
+					<label>Event Name </label>
 					<input
 						required
 						type="text"
 						name="eventName"
 						autoComplete="off"
-						placeholder="Event Name"
 						onChange={handleChange}
 					/>
 					<br />
-					<label>Description : </label>
+					<label>Description </label>
 					<textarea
 						type="text"
 						name="description"
 						autoComplete="off"
 						rows="4"
 						cols="35"
-						placeholder="Description"
 						onChange={handleChange}
 					/>
 					<br />
-					<label>Start Date: </label>
+					<div className='end-form'>
+					<div className='date'>
+					<label>Start Date </label>
 					<input
 						required
 						type="date"
@@ -50,18 +50,21 @@ const EventForm = ({
 						onChange={handleChange}
 					/>
 					<br />
-					<label>End Date (optional): </label>
+					<label>End Date (optional) </label>
 					<input type="date" name="endDate" onChange={handleChange} />
+					</div>
 					<br />
-					<label>Location: </label>
+					<div className='location'>
+					<label>Location </label>
 					<input
 						required
 						type="text"
 						name="location"
 						autoComplete="off"
-						placeholder="Location"
 						onChange={handleChange}
 					/>
+					</div>
+					</div>
 					<br />
 					<button type="submit" disabled={!validForm}>
 						Create Event

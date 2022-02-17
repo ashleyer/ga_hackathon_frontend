@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
 import EventForm from './EventForm'
 import { addEvent } from '../../services/eventService';
+import {Wrapper} from './CreateEvent-styles'
 
 const CreateEvent = () => {
   const navigate = useNavigate()
@@ -30,7 +31,8 @@ const CreateEvent = () => {
   }
 
   return (
-    <>
+    <Wrapper>
+      <h1>Create an Event</h1>
       <EventForm 
         handleCreateEvent={handleCreateEvent}
         handleChange={handleChange}
@@ -39,7 +41,7 @@ const CreateEvent = () => {
         formData={formData}
         setFormData={setFormData}
       />
-    </>
+    </Wrapper>
   )
 }
 

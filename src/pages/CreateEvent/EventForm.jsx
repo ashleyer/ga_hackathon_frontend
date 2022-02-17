@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Wrapper } from './EventForm-styles';
 
-
 const EventForm = ({
 	handleCreateEvent,
 	handleChange,

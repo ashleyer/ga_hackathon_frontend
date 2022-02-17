@@ -6,13 +6,9 @@ const SplitSection = ({ total }) => {
 
 	const handleSubmit = e => {
     e.preventDefault();
-    console.log(total, text);
     let divided = total / parseInt(text);
-    console.log(divided);
 		setSplitCost(divided);
   };
-  
-  console.log(splitCost);
   
 	return (
 		<form onSubmit={handleSubmit}>

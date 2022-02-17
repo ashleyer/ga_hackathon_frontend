@@ -11,7 +11,6 @@ const Dashboard = () => {
 	const events = useSelector(state => state.allEvents.events.events);
 	const dispatch = useDispatch();
 	const navigate = useNavigate()
-	console.log('events', events);
 	
 	useEffect(() => {
 		dispatch(fetchEvents());

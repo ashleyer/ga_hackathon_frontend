@@ -3,7 +3,6 @@ import LoginForm from '../../components/LoginForm/LoginForm'
 import Modal from "../Signup/Modal";
 import { Wrapper } from './Login-styles';
 
-
 const LoginPage = props => {
   const [message, setMessage] = useState([''])
 

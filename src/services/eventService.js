@@ -108,7 +108,6 @@ export const setAttendeeStatus = async (eventId, attendeeId, stat) => {
 			}),
 		});
     const data = await res.json();
-    console.log('data', data);
 		return data;
 	} catch (error) {
 		throw error;

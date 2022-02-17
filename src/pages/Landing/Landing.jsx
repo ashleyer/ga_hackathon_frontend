@@ -1,3 +1,4 @@
+import React from 'react'
 import styles from './Landing.css'
 
 const Landing = ({ user }) => {

@@ -43,6 +43,7 @@ export const getEventById = async (eventId) => {
       },
     })
     const data = await res.json()
+    console.log('data', data);
     return data
   } catch (error) {
     throw error

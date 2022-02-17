@@ -2,7 +2,6 @@ import React from 'react';
 import AttendeeCard from './AttendeeCard'
 
 const AttendeeList = ({attendees, handleDeleteAttendee, handleSetStatus}) => {
-  console.log(attendees);
   return (
     <>
       {attendees?.map((attendee) => (

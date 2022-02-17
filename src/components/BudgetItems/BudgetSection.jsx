@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import BudgetList from './BudgetList';
 import AddBudgetItem from './AddBudgetItem';
 import * as eventService from '../../services/eventService';
+import Total from './Total';
 
 const BudgetSection = ({ event, attendees, budget, setBudget }) => {
 	const [toggleNew, setToggleNew] = useState(false);
@@ -45,7 +46,11 @@ const BudgetSection = ({ event, attendees, budget, setBudget }) => {
 					handleCreateBudgetItem={handleCreateBudgetItem}
 					setToggleNew={setToggleNew}
 				/>
-			)}
+      )}
+      <Total
+        budget={budget}
+        attendees={attendees}
+      />
 		</>
 	);
 };

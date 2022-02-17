@@ -2,7 +2,6 @@ import React from 'react';
 import AttendeeActions from './AttendeeActions';
 
 const AttendeeCard = props => {
-	console.log(props.attendee);
   return (
 		<div>
 			<p>{props.attendee.attendeeName}</p>

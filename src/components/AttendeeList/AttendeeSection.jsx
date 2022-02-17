@@ -7,9 +7,7 @@ const AttendeeSection = ({ event, attendees, setAttendees }) => {
 	const [toggleNew, setToggleNew] = useState(false);
 
 	const handleCreateAttendee = async formData => {
-		console.log('handling create', formData);
     try {
-      console.log('id', event._id);
 			const newAttendee = await eventService.addAttendee(event._id, formData);
 			setAttendees([...attendees, newAttendee]);
 		} catch (error) {

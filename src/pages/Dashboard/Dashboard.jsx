@@ -19,6 +19,7 @@ const Dashboard = () => {
 	const handleDeleteEvent = async eventId => {
 		try {
 			await deleteEvent(eventId);
+			navigate('/dashboard')
 		} catch (error) {
 			throw error;
 		}

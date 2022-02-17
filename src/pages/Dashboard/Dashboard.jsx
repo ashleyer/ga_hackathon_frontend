@@ -5,6 +5,7 @@ import { deleteEvent } from '../../services/eventService';
 import { fetchEvents } from '../../redux/actions/eventActions';
 import { Link } from 'react-router-dom';
 import EventCard from '../../components/EventCard/EventCard';
+import { Wrapper } from './Dashboard-styles';
 
 const Dashboard = () => {
 	const events = useSelector(state => state.allEvents.events.events);
@@ -25,7 +26,7 @@ const Dashboard = () => {
 	};
 
 	return (
-		<>
+		<Wrapper>
 			<h1>Dashboard</h1>
 			<button onClick={() => navigate('/newevent')}>Create New</button>
 			{events?.map(event => (
@@ -33,7 +34,7 @@ const Dashboard = () => {
 					<EventCard event={event} handleDeleteEvent={handleDeleteEvent} />
 				</Link>
 			))}
-		</>
+		</Wrapper>
 	);
 };
 

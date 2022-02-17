@@ -66,7 +66,7 @@ const App = () => {
         <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/newEvent' element={< CreateEvent/>} />
         <Route path='/events/:id' element={< EventDetails/>} />
-        <Route path='events/:id/edit' element={< UpdateEvent/>} />
+        {/* <Route path='events/:id/edit' element={< UpdateEvent/>} /> */}
 
 
       </Routes>

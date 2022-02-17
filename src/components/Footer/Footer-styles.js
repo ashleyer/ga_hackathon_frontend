@@ -33,4 +33,9 @@ export const Wrapper = styled.div`
     a {
         color: inherit;
     }
+
+    @media screen and (max-width: 950px) {
+            gap: 0px;
+            justify-content: space-evenly;
+    }
 `;

@@ -1,9 +1,10 @@
 import React from 'react';
 
 const AttendeeActions = props => {
-	return (
+	// console.log(props);
+  return (
 		<>
-			<button onClick={() => props.handleDeleteTask(props.attendee._id)}>
+			<button onClick={() => props.handleDeleteAttendee(props.attendee._id)}>
 				X
 			</button>
 		</>

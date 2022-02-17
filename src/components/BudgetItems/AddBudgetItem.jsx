@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-const AddAttendee = props => {
+const AddBudgetItem = props => {
 	const [formData, setFormData] = useState({
-		attendeeName: '',
-		email: '',
+		itemName: '',
+		itemPrice: '',
 	});
 
 	const handleChange = e => {
@@ -12,31 +12,30 @@ const AddAttendee = props => {
 
 	const handleSubmit = e => {
 		e.preventDefault();
-		props.handleCreateAttendee(formData);
+		props.handleCreateBudgetItem(formData);
 		props.setToggleNew(false);
 	};
 
 	return (
 		<form onSubmit={handleSubmit}>
-			<label>Attendee Name: </label>
+			<label>Item: </label>
 			<input
 				type="text"
 				autoComplete="off"
-				name="attendeeName"
-				placeholder="Name"
+				name="itemName"
+				placeholder="item"
 				onChange={handleChange}
 			/>
-			<label>Email: </label>
+			<label>Price: </label>
 			<input
-				type="text"
-				autoComplete="off"
-				name="email"
-				placeholder="Email Address"
+				type="number"
+				name="itemPrice"
+				placeholder="Price"
 				onChange={handleChange}
-			/>
-			<button type="submit">Add Attendee</button>
+      />
+      <button type="submit">Add Budget Item</button>
 		</form>
 	);
 };
 
-export default AddAttendee;
+export default AddBudgetItem

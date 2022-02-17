@@ -3,12 +3,13 @@ import AddAttendee from './AddAttendee';
 import AttendeeList from './AttendeeList';
 import * as eventService from '../../services/eventService';
 
-const AttendeeSection = ({ event }) => {
+const AttendeeSection = ({ event, attendees, setAttendees }) => {
 	const [toggleNew, setToggleNew] = useState(false);
-	const [attendees, setAttendees] = useState([]);
 
 	const handleCreateAttendee = async formData => {
-		try {
+		console.log('handling create', formData);
+    try {
+      console.log('id', event._id);
 			const newAttendee = await eventService.addAttendee(event._id, formData);
 			setAttendees([...attendees, newAttendee]);
 		} catch (error) {

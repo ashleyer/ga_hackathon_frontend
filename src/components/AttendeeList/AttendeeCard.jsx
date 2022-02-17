@@ -2,10 +2,11 @@ import React from 'react';
 import AttendeeActions from './AttendeeActions';
 
 const AttendeeCard = props => {
-	return (
+	console.log(props.attendee);
+  return (
 		<div>
-			<p>{props.attendees.attendeeName}</p>
-			<p>{props.attendees.email}</p>
+			<p>{props.attendee.attendeeName}</p>
+			<p>{props.attendee.email}</p>
 			<select
 				name="attendee.status"
 				value={props.attendee.status}

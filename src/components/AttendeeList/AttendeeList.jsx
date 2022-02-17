@@ -1,12 +1,14 @@
 import React from 'react';
 import AttendeeCard from './AttendeeCard'
 
-const AttendeeList = (props) => {
+const AttendeeList = ({attendees, handleDeleteAttendee, handleSetStatus}) => {
+  console.log(attendees);
   return (
     <>
-      {props.attendees?.map((attendee) => (
+      {attendees?.map((attendee) => (
         <AttendeeCard
-          {...props}
+          handleDeleteAttendee={handleDeleteAttendee}
+          handleSetStatus={handleSetStatus}
           attendee={attendee}
           key={attendee._id}
         />

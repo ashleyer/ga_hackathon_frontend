@@ -17,7 +17,6 @@ const UpdateEvent = (props) => {
     e.preventDefault()
     try {
       const updatedEvent = await updateEvent(id, formData)
-      console.log(updatedEvent);
       navigate(`/events/${updatedEvent.updatedEvent._id}`)
     } catch (error) {
       throw error
@@ -31,8 +30,6 @@ const UpdateEvent = (props) => {
     }
     fetchEvent()
   }, [id])
-
-  console.log(formData);
 
   return (
     <UpdateForm

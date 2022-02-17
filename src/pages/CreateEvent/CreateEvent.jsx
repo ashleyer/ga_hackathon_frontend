@@ -6,7 +6,6 @@ import {Wrapper} from './CreateEvent-styles'
 
 const CreateEvent = () => {
   const navigate = useNavigate()
-  // const [event, setEvent] = useState()
   const [formData, setFormData] = useState({
     eventName: '',
     description: '',

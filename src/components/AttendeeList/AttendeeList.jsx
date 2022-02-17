@@ -1,7 +1,6 @@
 import React from 'react';
 import AttendeeCard from './AttendeeCard'
 
-
 const AttendeeList = ({attendees, handleDeleteAttendee, handleSetStatus}) => {
   return (
     <>

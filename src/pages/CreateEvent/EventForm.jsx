@@ -32,9 +32,8 @@ const EventForm = ({
 					<br />
 					<label>Description : </label>
 					<textarea
-						required
 						type="text"
-						name="eventName"
+						name="description"
 						autoComplete="off"
 						rows="4"
 						cols="35"

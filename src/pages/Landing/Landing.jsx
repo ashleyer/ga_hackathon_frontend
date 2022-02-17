@@ -1,9 +1,5 @@
-import { Wrapper } from './Landing-styles.js'
-import hero_photo from '../images/Hero_Photo.png';
-
-
-
-
+import React from 'react'
+import styles from './Landing.css'
 
 const Landing = ({ user }) => {
   return (

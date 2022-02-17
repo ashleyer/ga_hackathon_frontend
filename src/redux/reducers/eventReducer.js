@@ -1,7 +1,8 @@
 import { ActionTypes } from '../contants/action-types'
 
 const initialState = {
-  events: []
+  events: [],
+  singleEvent: {}
 }
 
 export const eventReducer = (state = initialState, { type, payload }) => {
@@ -10,6 +11,10 @@ export const eventReducer = (state = initialState, { type, payload }) => {
       return { ...state, events: payload };
     case ActionTypes.FETCH_EVENTS:
       return { ...state, events: payload };
+    case ActionTypes.SET_SINGLE_EVENT:
+      return { ...state, singleEvent: payload };
+    case ActionTypes.FETCH_SINGLE_EVENT:
+      return {...state, singleEvent: payload}
     default:
       return state;
   }

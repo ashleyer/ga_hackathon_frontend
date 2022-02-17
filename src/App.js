@@ -1,11 +1,14 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar'
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import * as authService from './services/authService'
-import Footer from './components/Footer/Footer'
+import Dashboard from './pages/Dashboard/Dashboard'
+import CreateEvent from './pages/CreateEvent/CreateEvent'
+import EventDetails from './pages/EventDetails/EventDetails'
+import { useSelector } from 'react-redux'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -58,8 +61,22 @@ const App = () => {
 
 
         <Route path="/" element={<Landing user={user} />} />
+<<<<<<< HEAD
 
 
+=======
+        <Route
+          path="/signup"
+          element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
+        />
+        <Route
+          path="/login"
+          element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
+        />
+        <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/newEvent' element={<CreateEvent />} />
+        <Route path='/events/:id' element={<EventDetails />}/>
+>>>>>>> 7c2188d6a23415d10edf9c90021dd11d7ad3b42f
       </Routes>
       <Footer />
     </>

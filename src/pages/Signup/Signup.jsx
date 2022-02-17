@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import SignupForm from '../../components/SignupForm/SignupForm'
 
 import Modal from './Modal'

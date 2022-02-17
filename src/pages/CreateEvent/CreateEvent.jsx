@@ -23,7 +23,7 @@ const CreateEvent = () => {
     e.preventDefault()
     try {
       const newEvent = await addEvent(formData)
-      navigate(`/events/${newEvent._id}`)
+      navigate(`/events/${newEvent.event._id}`)
     } catch (error) {
       throw error
     }

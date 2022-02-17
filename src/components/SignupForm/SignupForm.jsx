@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Wrapper } from './SignupForm-styles.js'
 import * as authService from '../../services/authService'

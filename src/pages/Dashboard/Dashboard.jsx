@@ -1,17 +1,18 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteEvent } from '../../services/eventService';
-import fetchEvents from '../../redux/actions/eventActions';
+import { fetchEvents } from '../../redux/actions/eventActions';
 import { Link } from 'react-router-dom';
 import EventCard from '../../components/EventCard/EventCard';
 
 const Dashboard = () => {
-	const events = useSelector(state => state.allEvents.events);
+	const events = useSelector(state => state.allEvents.events.events);
 	const dispatch = useDispatch();
-
+	console.log('events', events);
+	
 	useEffect(() => {
 		dispatch(fetchEvents());
-	});
+	}, []);
 
 	const handleDeleteEvent = async eventId => {
 		try {

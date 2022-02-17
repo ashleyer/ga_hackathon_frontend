@@ -79,7 +79,6 @@ export const deleteEvent = async eventId => {
 
 export const addAttendee = async (eventId, attendee) => {
 	try {
-		console.log('eventId', eventId, 'attendee', attendee);
 		const res = await fetch(`${BASE_URL}${eventId}/attendees`, {
 			method: 'POST',
 			headers: {
@@ -89,10 +88,8 @@ export const addAttendee = async (eventId, attendee) => {
 			body: JSON.stringify(attendee),
 		});
 		const data = await res.json();
-		console.log('data', data);
 		return data;
 	} catch (error) {
-		console.log('error', error);
 		throw error;
 	}
 };
@@ -109,7 +106,8 @@ export const setAttendeeStatus = async (eventId, attendeeId, stat) => {
 				status: stat,
 			}),
 		});
-		const data = await res.json();
+    const data = await res.json();
+    console.log('data', data);
 		return data;
 	} catch (error) {
 		throw error;

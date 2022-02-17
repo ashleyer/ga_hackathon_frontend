@@ -29,14 +29,32 @@ const EventDetails = () => {
 
 	return (
 		<Wrapper>
-			<h1>Event Details</h1>
-			<h1>{event.eventName}</h1>
+			<div className='event-box'>
+			<div className='top-info'>
+			<h1> {event.eventName}</h1>
+			<div className='info-box'>
+			<h3>Description:</h3>
+			<div className='info'>
 			<h3>{event.description}</h3>
+			</div>
+			</div>
+			<div className='info-box'>
+			<h3>Date: </h3>
+			<div className='info'>
 			<h3>{moment(event.startDate).utc().format('MM/DD/YYYY')}</h3>
 			{event.endDate && (
 				<h3>{moment(event.endDate).utc().format('MM/DD/YYYY')}</h3>
+				
 			)}
+			</div>
+			</div>
+			<div className='info-box'>
+			<h3>Location:</h3>
+			<div className='info'>
 			<h3>{event.location}</h3>
+			</div>
+			</div>
+			</div>
 			<AttendeeSection
 				event={event}
 				attendees={attendees}
@@ -48,6 +66,7 @@ const EventDetails = () => {
 				budget={budget}
 				setBudget={setBudget}
 			/>
+			</div>
 		</Wrapper>
 	);
 };

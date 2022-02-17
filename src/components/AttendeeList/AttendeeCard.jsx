@@ -1,9 +1,10 @@
 import React from 'react';
 import AttendeeActions from './AttendeeActions';
+import {Wrapper} from './AttendeeCard-styles'
 
 const AttendeeCard = props => {
   return (
-		<div>
+		<Wrapper>
 			<p>{props.attendee.attendeeName}</p>
 			<p>{props.attendee.email}</p>
 			<select
@@ -17,7 +18,7 @@ const AttendeeCard = props => {
 				<option value="Paid">Paid</option>
 			</select>
 			<AttendeeActions {...props} />
-		</div>
+		</Wrapper>
 	);
 };
 

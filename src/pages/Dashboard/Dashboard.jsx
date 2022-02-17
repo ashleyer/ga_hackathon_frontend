@@ -27,13 +27,15 @@ const Dashboard = () => {
 
 	return (
 		<Wrapper>
-			<h1>Dashboard</h1>
-			<button onClick={() => navigate('/newevent')}>Create New</button>
 			{events?.map(event => (
+				
 				<Link key={event._id} to={`/events/${event._id}`}>
+					<div className='event-box'>
 					<EventCard event={event} handleDeleteEvent={handleDeleteEvent} />
+					</div>
 				</Link>
 			))}
+			<button className='new-event-btn' onClick={() => navigate('/newevent')}>New Event</button>
 		</Wrapper>
 	);
 };

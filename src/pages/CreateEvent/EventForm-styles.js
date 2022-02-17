@@ -29,7 +29,7 @@ button {
     background-color: var(--darkPink);
     padding: 5px 90px;
     border-radius: 12px;
-    margin: 10px 250px;
+    margin: 10px;
     cursor: pointer;
     font-size: 17px;
 }

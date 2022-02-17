@@ -3,6 +3,7 @@ import BudgetList from './BudgetList';
 import AddBudgetItem from './AddBudgetItem';
 import * as eventService from '../../services/eventService';
 import Total from './Total';
+import { Wrapper } from './BudgetSection-styles';
 
 const BudgetSection = ({ event, attendees, budget, setBudget }) => {
 	const [toggleNew, setToggleNew] = useState(false);
@@ -29,7 +30,7 @@ const BudgetSection = ({ event, attendees, budget, setBudget }) => {
 	};
 
 	return (
-		<>
+		<Wrapper>
 			<h1>Budget</h1>
 			<button onClick={() => setToggleNew(!toggleNew)}>
 				Add New Budget Item
@@ -51,7 +52,7 @@ const BudgetSection = ({ event, attendees, budget, setBudget }) => {
         budget={budget}
         attendees={attendees}
       />
-		</>
+		</Wrapper>
 	);
 };
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import AddAttendee from './AddAttendee';
 import AttendeeList from './AttendeeList';
 import * as eventService from '../../services/eventService';
+import { Wrapper } from './AttendeeSection-styles';
 
 const AttendeeSection = ({ event, attendees, setAttendees }) => {
 	const [toggleNew, setToggleNew] = useState(false);
@@ -41,7 +42,7 @@ const AttendeeSection = ({ event, attendees, setAttendees }) => {
 	};
 
 	return (
-		<>
+		<Wrapper>
 			<h1>Attendees</h1>
 			<button onClick={() => setToggleNew(!toggleNew)}>Add New Attendee</button>
 			<AttendeeList
@@ -58,7 +59,7 @@ const AttendeeSection = ({ event, attendees, setAttendees }) => {
 					setToggleNew={setToggleNew}
 				/>
 			)}
-		</>
+		</Wrapper>
 	);
 };
 

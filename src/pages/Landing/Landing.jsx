@@ -18,4 +18,10 @@ const Landing = ({ user, handleShowSignup }) => {
   )
 }
 
-export default Landing
+				<button>Start</button>
+			</main>
+		</Wrapper>
+	);
+};
+
+export default Landing;

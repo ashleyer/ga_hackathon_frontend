@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import BudgetList from './BudgetList';
 import AddBudgetItem from './AddBudgetItem';
+import SplitSection from './SplitSection'
 import * as eventService from '../../services/eventService';
 import Total from './Total';
 import { Wrapper } from './BudgetSection-styles';
@@ -53,6 +54,7 @@ const BudgetSection = ({ event, attendees, budget, setBudget }) => {
         attendees={attendees}
       />
 		</Wrapper>
+
 	);
 };
 

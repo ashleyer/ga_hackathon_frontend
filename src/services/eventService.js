@@ -43,7 +43,6 @@ export const getEventById = async (eventId) => {
       },
     })
     const data = await res.json()
-    console.log('data', data);
     return data
   } catch (error) {
     throw error
@@ -72,6 +71,55 @@ export const deleteEvent = async (eventId) => {
     await fetch(`${BASE_URL}${eventId}`, {
       method: 'DELETE',
       headers: { 'Authorization': `Bearer ` + tokenService.getToken()}
+    })
+  } catch (error) {
+    throw error
+  }
+}
+
+export const addAttendee = async (eventId, attendee) => {
+  try {
+    const res = await fetch(`${BASE_URL}${eventId}/attendees`, {
+      method: "POST",
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      },
+      body: JSON.stringify(attendee)
+    })
+    const data = await res.json()
+    return data
+  } catch (error) {
+    throw error
+  }
+}
+
+export const setAttendeeStatus = async (eventId, attendeeId, stat) => {
+  try {
+    const res = await fetch(`${BASE_URL}${eventId}/attendees/${attendeeId}`, {
+      method: "PATCH",
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ` + tokenService.getToken()
+      },
+      body: JSON.stringify({
+        status: stat
+      })
+    })
+    const data = await res.json()
+    return data 
+  } catch (error) {
+    throw error
+  }
+}
+
+export const deleteAttendee = async (eventId, attendeeId) => {
+  try {
+    await fetch(`${BASE_URL}${eventId}/attendees/${attendeeId}`, {
+      method: "DELETE",
+      headers: {
+        'Authorization': 'Bearer ' + tokenService.getToken()
+      }
     })
   } catch (error) {
     throw error

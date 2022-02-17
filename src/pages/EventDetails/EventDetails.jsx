@@ -3,8 +3,7 @@ import { useParams } from 'react-router';
 // import { Link } from 'react-router-dom';
 import moment from 'moment';
 import * as eventService from '../../services/eventService';
-// import { fetchSingleEvent, fetchEvents } from '../../redux/actions/eventActions';
-// import { useSelector, useDispatch } from 'react-redux';
+import AttendeeSection from '../../components/AttendeeList/AttendeeSection';
 
 const EventDetails = () => {
 	const { id } = useParams();
@@ -14,7 +13,6 @@ const EventDetails = () => {
 		const fetchEvent = async () => {
 			try {
         const eventData = await eventService.getEventById(id);
-        console.log('eventdata', eventData);
 				setEvent(eventData.event);
 			} catch (error) {
 				throw error;
@@ -22,8 +20,6 @@ const EventDetails = () => {
 		};
 		fetchEvent();
 	}, [id]);
-
-	console.log('event', event);
 
 	return (
 		<>
@@ -34,24 +30,10 @@ const EventDetails = () => {
 			{event.endDate && (
 				<h3>{moment(event.endDate).utc().format('MM/DD/YYYY')}</h3>
 			)}
-			<h3>{event.location}</h3>
+      <h3>{event.location}</h3>
+      <AttendeeSection event={event}/>
 		</>
 	);
 };
 
 export default EventDetails;
-
-// const events = useSelector((state) => state.allEvents.events.events)
-// const dispatch = useDispatch()
-// const findEvent = (id) => {
-//   const event = events.find(event => event._id === id)
-//   // console.log('event', event);
-//   setEvent(event)
-// }
-
-// useEffect(() => {
-// 	dispatch(fetchEvents());
-//   findEvent(id)
-// }, []);
-
-// console.log('events', events);

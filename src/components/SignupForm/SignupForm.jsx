@@ -26,7 +26,7 @@ const SignupForm = props => {
     try {
       await authService.signup(formData)
       props.handleSignupOrLogin()
-      navigate('/')
+      navigate('/dashboard')
     } catch (err) {
       props.updateMessage(err.message)
     }

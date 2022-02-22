@@ -23,47 +23,47 @@ const App = () => {
 
 	const handleSignupOrLogin = () => {
 		setUser(authService.getUser());
+		if (signupVisible) {
+			handleSignupPopup()
+		}
+		if (loginVisible) {
+			handleLoginPopup()
+		}
 	};
 
 	const [signupVisible, setSignupVisible] = useState(false);
 
-	const handleShowSignup = () => {
-		setSignupVisible(true);
+	const handleSignupPopup = () => {
+		setSignupVisible(!signupVisible);
 	};
 
-	const handleHideSignup = () => {
-		setSignupVisible(false);
-	};
 
 	const [loginVisible, setLoginVisible] = useState(false);
 
-	const handleShowLogin = () => {
-		setLoginVisible(true);
+	const handleLoginPopup = () => {
+		setLoginVisible(!loginVisible);
 	};
 
-	const handleHideLogin = () => {
-		setLoginVisible(false);
-	};
 
 	return (
 		<>
 			<NavBar
 				user={user}
 				handleLogout={handleLogout}
-				handleShowSignup={handleShowSignup}
-				handleShowLogin={handleShowLogin}
+				handleSignupPopup={handleSignupPopup}
+				handleLoginPopup={handleLoginPopup}
 			/>
 			{signupVisible && (
 				<Signup
 					handleSignupOrLogin={handleSignupOrLogin}
-					onClose={handleHideSignup}
+					onClose={handleSignupPopup}
 				/>
 			)}
 
 			{loginVisible && (
 				<Login
 					handleSignupOrLogin={handleSignupOrLogin}
-					onClose={handleHideLogin}
+					onClose={handleLoginPopup}
 				/>
 			)}
 
